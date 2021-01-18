@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\PokemonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,20 @@ use App\Http\Controllers\GameController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::view('/admin', 'admin.v_homeadmin');
 
 Route::get('/game', [GameController::class, 'index'])->name('game');
+Route::get('/game/detail/{id_game}', [GameController::class, 'detail']);
+Route::get('/game/add', [GameController::class, 'tambah']);
+Route::get('/game/edit/{id_game}', [GameController::class, 'edit']);
+Route::get('/game/delete/{id_game}',[GameController::class, 'delete']);
+
+Route::get('/pokemon', [PokemonController::class, 'index'])->name('pokemon');
+
+
+Route::post('/game/insert', [GameController::class, 'insert']);
+Route::post('/game/update/{id_game}', [GameController::class, 'update']);

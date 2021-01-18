@@ -14,6 +14,12 @@
               <p>Game</p>
             </a>
           </li>
+          <li class="nav-item" >
+            <a href="/pokemon" class=" nav-link {{ request()->is('pokemon') ? 'active' : ''}}">
+              <i class="nav-icon fas fa-book"></i>
+              <p>Pokedex</p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="https://adminlte.io/docs/3.0" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
