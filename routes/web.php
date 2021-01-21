@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\PokemonController;
+use App\Http\Controllers\PokemonController2;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::get('/game/edit/{id_game}', [GameController::class, 'edit']);
 Route::get('/game/delete/{id_game}',[GameController::class, 'delete']);
 
 Route::get('/pokemon', [PokemonController::class, 'index'])->name('pokemon');
+Route::get('/pokemon2', [PokemonController2::class, 'index'])->name('pokemon');
 
 
 Route::post('/game/insert', [GameController::class, 'insert']);

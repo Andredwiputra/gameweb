@@ -8,6 +8,18 @@ use Illuminate\Support\Facades\DB;
 
 class PokemonModel extends Model
 {
+    // Definisi tabel di model
+    protected $table = "tbl_game";
+    protected $primary_key = "id_game";
+    protected $fillable = [
+        "nama_game",
+        "platform",
+        "release_date",
+        "rating",
+        "foto_game",
+    ];
+    public $timestamps = false;
+
     public function allData()
     {
         //nama tabel
